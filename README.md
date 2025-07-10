@@ -1,138 +1,101 @@
-🧠 Machine Learning com Scikit-Learn — Classificadores e Visualização
+# 🧠 Machine Learning com Scikit-Learn — Classificadores e Visualização
 
-Este repositório contém diversos experimentos de aprendizado de máquina utilizando a biblioteca Scikit-Learn. Os dados são públicos e foram extraídos de gists para projetos didáticos, com foco em classificação supervisionada, avaliação de modelos e visualizações de decisão.
-
-
----
-
-📊 Modelos Utilizados
-
-🌳 Decision Tree Classifier
-
-Modelo: DecisionTreeClassifier(max_depth=3)
-
-Aplicação: Previsão de venda de carros com base em preço, idade e km por ano.
-
-Visualização: Exportação da árvore de decisão em PDF com graphviz.
-
-
-🔍 LinearSVC
-
-Modelo: LinearSVC()
-
-Aplicações:
-
-Classificação de animais com base em atributos físicos.
-
-Previsão de conversão de leads (ex: palestra, contato, patrocínio).
-
-Classificação de projetos finalizados com base no tempo estimado e preço.
-
-
-
-📈 SVC (Support Vector Classifier)
-
-Modelo: SVC(gamma='auto')
-
-Aplicações:
-
-Mesmos dados dos projetos.
-
-Com e sem normalização dos dados.
-
-Utilização de StandardScaler para melhora de performance.
-
-Visualização das regiões de decisão com matplotlib.
-
-
-
-🧪 DummyClassifier
-
-Modelo: DummyClassifier(strategy='stratified')
-
-Função: Comparar a performance dos modelos reais com um modelo base (aleatório).
-
-
+Este repositório contém diversos experimentos de aprendizado de máquina utilizando a biblioteca **Scikit-Learn**. Os dados são públicos e foram extraídos de gists para projetos didáticos, com foco em **classificação supervisionada**, avaliação de modelos e visualizações de decisão.
 
 ---
 
-📁 Estrutura dos Experimentos
+## 📊 Modelos Utilizados
 
-Experimento	Dados Usados	Modelo	Avaliação	Destaques
-
-Venda de carros	precos.csv	Árvores, SVM	accuracy_score	Conversão de milhas para km, idade do carro, visualização da árvore
-Classificação animal	Lista estática	LinearSVC	accuracy_score	Identificação binária de "porcos" e "cachorros"
-Funil de vendas	tracking.csv	SVM, Dummy	accuracy_score	Avaliação de conversão de leads
-Projetos finalizados	projetos.csv	LinearSVC, SVC	accuracy_score, visual	Visualização de fronteiras de decisão
-
-
+### 🌳 Decision Tree Classifier
+- **Classe:** `DecisionTreeClassifier(max_depth=3)`
+- **Uso:** Previsão de venda de carros com base em preço, idade e km por ano.
+- **Destaque:** Geração de árvore de decisão com `graphviz`.
 
 ---
 
-📈 Visualizações
-
-As visualizações incluídas:
-
-Gráficos de dispersão com seaborn
-
-Fronteiras de decisão com contourf e matplotlib
-
-Exportação de árvores de decisão com graphviz
-
-
+### 🔍 LinearSVC
+- **Classe:** `LinearSVC()`
+- **Usos:**
+  - Classificação de animais com base em atributos físicos.
+  - Previsão de conversão de leads.
+  - Classificação de projetos como finalizados ou não.
 
 ---
 
-🧪 Avaliação dos Modelos
-
-Todos os modelos foram avaliados com métrica de acurácia, com separação treino/teste usando train_test_split e estratificação para manter a proporção das classes.
-
-
----
-
-📚 Bibliotecas Utilizadas
-
-pandas
-
-numpy
-
-sklearn.model_selection, sklearn.metrics, sklearn.tree, sklearn.svm, sklearn.dummy, sklearn.preprocessing
-
-matplotlib.pyplot
-
-seaborn
-
-graphviz
-
-
+### 📈 SVC (Support Vector Classifier)
+- **Classe:** `SVC(gamma='auto')`
+- **Usos:**
+  - Classificação de projetos com e sem normalização (`StandardScaler`).
+  - Visualização das regiões de decisão com `matplotlib`.
 
 ---
 
-🛠️ Como Executar
+### 🧪 DummyClassifier
+- **Classe:** `DummyClassifier(strategy='stratified')`
+- **Uso:** Comparar a performance dos modelos reais com um modelo de base aleatório.
 
-1. Clone este repositório:
+---
 
-git clone https://github.com/seu-usuario/seu-repo.git
-cd seu-repo
+## 📁 Experimentos e Dados
 
+| Experimento               | Dados Usados                                                                                          | Modelo(s)         | Avaliação         | Destaques Visuais                  |
+|---------------------------|--------------------------------------------------------------------------------------------------------|-------------------|-------------------|-------------------------------------|
+| Venda de Carros           | [`precos.csv`](https://gist.githubusercontent.com/guilhermesilveira/dd7ba8142321c2c8aaa0ddd6c8862fcc/raw) | DecisionTree, SVM | `accuracy_score`  | Exportação da árvore (`graphviz`)  |
+| Classificação de Animais  | Lista fixa no código                                                                                   | LinearSVC         | `accuracy_score`  | Simples e didático                 |
+| Funil de Vendas           | [`tracking.csv`](https://gist.githubusercontent.com/guilhermesilveira/b9dd8e4b62b9e22ebcb9c8e89c271de4/raw) | SVM, Dummy        | `accuracy_score`  | Comparação real x aleatório       |
+| Finalização de Projetos   | [`projetos.csv`](https://gist.githubusercontent.com/guilhermesilveira/12291c548acaf544596795709020e3db/raw) | LinearSVC, SVC     | `accuracy_score`  | Fronteiras de decisão com `plt`   |
 
-2. Instale as dependências:
+---
 
-pip install -r requirements.txt
+## 📈 Visualizações
 
+Inclui:
+- Gráficos com `seaborn` para análise exploratória.
+- Fronteiras de decisão com `matplotlib.contourf`.
+- Exportação de árvores com `graphviz` para PDF.
 
-3. Execute os scripts Python desejados com:
+---
 
-python nome_do_script.py
+## 🧪 Avaliação dos Modelos
 
+Todos os modelos utilizam:
+- **`accuracy_score`** como métrica principal.
+- Divisão de dados com `train_test_split`.
+- **Estratificação (`stratify`)** para manter a proporção das classes.
 
+---
 
+## 📚 Bibliotecas Utilizadas
+
+- `pandas`
+- `numpy`
+- `matplotlib`
+- `seaborn`
+- `scikit-learn`
+  - `DecisionTreeClassifier`
+  - `LinearSVC`
+  - `SVC`
+  - `DummyClassifier`
+  - `train_test_split`
+  - `StandardScaler`
+  - `accuracy_score`
+- `graphviz`
+
+---
+
+## 🛠️ Como Executar
+
+1. Clone o repositório
+
+2. pip install -r requirements.txt
+
+3.python nome_do_script.py
 
 ---
 
 ✅ Objetivo
 
-Este projeto foi criado para estudos e experimentos práticos de machine learning com Python, testando modelos lineares, não lineares, árvores de decisão e conceitos de baseline.
+Este projeto foi desenvolvido para prática e estudo de machine learning com Python, testando classificadores, comparações com modelos de base e diferentes abordagens de visualização.
 
 
 ---
@@ -141,5 +104,3 @@ Este projeto foi criado para estudos e experimentos práticos de machine learnin
 
 Conjuntos de dados por Guilherme Silveira, instrutor da Alura.
 
-
----
