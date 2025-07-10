@@ -89,7 +89,7 @@ Todos os modelos utilizam:
 
 2. pip install -r requirements.txt
 
-3.python nome_do_script.py
+3. python nome_do_script.py
 
 ---
 
